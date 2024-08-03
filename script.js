@@ -40,13 +40,19 @@ function playGame() {
     computerScore = 0;
 
     for(let i=0; i<5; ++i) {
+        
+        console.log(`------------------- ROUND ${i+1} -------------------`);
+
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
 
         console.log(playRound(humanChoice, computerChoice));
+        
     }
 
+    console.log(`------------------- FINAL RESULT -------------------`);
     console.log(`Your score: ${humanScore}\nComputer score: ${computerScore}`);
+    
     if (humanScore === computerScore){
         console.log("Game ended! It's a tie!")
     }
@@ -57,6 +63,8 @@ function playGame() {
     }
     
     function playRound(humanChoice, computerChoice){
+
+        console.log(`Your choice: ${humanChoice}\nComputer choice: ${computerChoice}`)
 
         if (humanChoice === computerChoice){
             return `It's a tie!`
