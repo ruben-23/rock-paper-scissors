@@ -26,4 +26,4 @@ function getHumanChoice() {
 }
 
 humanScore = 0;
-computerSscore = 0;
+computerScore = 0;
