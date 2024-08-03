@@ -11,18 +11,25 @@ function getComputerChoice() {
 function getHumanChoice() {
 
     while(true){
-        let userChoice = prompt("Enter your choice (rock, paper, scissors): ");
+        
+        let choice = prompt("Enter your choice (rock, paper, scissors): ");
 
-        if(userChoice === null){
-            console.log("Please enter a valid choice.");
-        }
-        else if (
-            userChoice !== "rock" &&
-            userChoice !== "paper" &&
-            userChoice !== "scissors" ) {
-                console.log("Please enter a valid choice (rock, paper, scissors)")
+        if (choice !== null){
+
+            choice = choice.toLowerCase();
+
+            if (
+                choice !== "rock" &&
+                choice !== "paper" &&
+                choice !== "scissors" ) {
+                    console.log("Please enter a valid choice (rock, paper, scissors)")
+            } else {
+                return choice;
+            }
+           
         } else {
-            return userChoice;
+          
+            console.log("Please enter a valid choice (rock, paper, scissors)");
         }
     }
 }
@@ -32,6 +39,8 @@ computerScore = 0;
 
 
 function playRound(humanChoice, computerChoice){
+
+
 
 }
 
