@@ -6,3 +6,15 @@ function getComputerChoice() {
 
     return choices[index];
 }
+
+
+function getHumanChoice() {
+
+    let userChoice = prompt("Enter your choice (rock, paper, scissors): ");
+
+    
+
+
+
+
+}
