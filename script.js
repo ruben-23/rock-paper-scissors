@@ -23,5 +23,7 @@ function getHumanChoice() {
     } else {
         return userChoice;
     }
-
 }
+
+humanScore = 0;
+computerSscore = 0;
