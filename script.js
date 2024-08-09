@@ -17,6 +17,10 @@ const choices = document.querySelector(".choices");
 const buttons = choices.querySelectorAll("button");
 const result = document.querySelector(".result");
 
+const para1 = document.createElement("p");
+const para2 = document.createElement("p");
+const para3 = document.createElement("p");
+
 buttons.forEach( (button) => {
 
     button.addEventListener("click", () => {
@@ -26,13 +30,8 @@ buttons.forEach( (button) => {
 
 } );
 
-
-
 function playRound(humanChoice, computerChoice){
 
-    const para1 = document.createElement("p");
-    const para2 = document.createElement("p");
-    const para3 = document.createElement("p");
 
     para1.textContent = `Your choice: ${humanChoice}`
     para2.textContent = `Computer choice: ${computerChoice}`;
@@ -50,11 +49,9 @@ function playRound(humanChoice, computerChoice){
         para3.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
     }
 
-    console.log(para3.textContent);
     result.appendChild(para1);
     result.appendChild(para2);
     result.appendChild(para3);
-    
 
 }
 
