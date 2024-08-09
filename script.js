@@ -7,33 +7,6 @@ function getComputerChoice() {
     return choices[index];
 }
 
-
-function getHumanChoice() {
-
-    while(true){
-        
-        let choice = prompt("Enter your choice (rock, paper, scissors): ");
-
-        if (choice !== null){
-
-            choice = choice.toLowerCase();
-
-            if (
-                choice !== "rock" &&
-                choice !== "paper" &&
-                choice !== "scissors" ) {
-                    console.log("Please enter a valid choice (rock, paper, scissors)")
-            } else {
-                return choice;
-            }
-           
-        } else {
-          
-            console.log("Please enter a valid choice (rock, paper, scissors)");
-        }
-    }
-}
-
 humanScore = 0;
 computerScore = 0;
 
@@ -45,7 +18,7 @@ const buttons = choices.querySelectorAll("button");
 const result = document.querySelector(".result");
 
 buttons.forEach( (button) => {
-    console.log("Weeeeee");
+
     button.addEventListener("click", () => {
         humanChoice = button.textContent.toLowerCase();
         playRound(humanChoice, computerChoice);
@@ -56,7 +29,7 @@ buttons.forEach( (button) => {
 
 
 function playRound(humanChoice, computerChoice){
-    console.log("We are here");
+
     const para1 = document.createElement("p");
     const para2 = document.createElement("p");
     const para3 = document.createElement("p");
@@ -86,8 +59,6 @@ function playRound(humanChoice, computerChoice){
 }
 
 function playGame() {
-
-
 
     console.log(`------------------- FINAL RESULT -------------------`);
     console.log(`Your score: ${humanScore}\nComputer score: ${computerScore}`);
