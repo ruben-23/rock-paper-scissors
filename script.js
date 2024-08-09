@@ -32,7 +32,6 @@ buttons.forEach( (button) => {
 
 function playRound(humanChoice, computerChoice){
 
-
     para1.textContent = `Your choice: ${humanChoice}`
     para2.textContent = `Computer choice: ${computerChoice}`;
 
@@ -53,25 +52,40 @@ function playRound(humanChoice, computerChoice){
     result.appendChild(para2);
     result.appendChild(para3);
 
+    checkScore();
+
 }
 
-function playGame() {
+const para4 = document.createElement("p");
+const para5 = document.createElement("p");
+const para6 = document.createElement("p");
+const para7 = document.createElement("p");
 
-    console.log(`------------------- FINAL RESULT -------------------`);
-    console.log(`Your score: ${humanScore}\nComputer score: ${computerScore}`);
+
+
+function checkScore() {
+
+    if(humanScore != 5 && computerScore != 5) return;
+
+    para4.textContent = `------------------- FINAL RESULT -------------------`;
+    result.appendChild(para4);
+
+
+    para5.textContent = `Your score: ${humanScore}`;
+    para6.textContent = `Computer score: ${computerScore}`;
     
     if (humanScore === computerScore){
-        console.log("Game ended! It's a tie!")
+        para7.textContent ="Game ended! It's a tie!";
     }
     else if(humanScore > computerScore){
-        console.log("Game ended! You won!");
+        para7.textContent ="Game ended! You won!";
     } else {
-        console.log("Game ended! You lost!");
+        para7.textContent ="Game ended! You lost!";
     }
+
+    result.appendChild(para5);
+    result.appendChild(para6);
+    result.appendChild(para7);
     
-   
 
 }
-
-
-// playGame();
