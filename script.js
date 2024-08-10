@@ -17,9 +17,17 @@ const choices = document.querySelector(".choices");
 const buttons = choices.querySelectorAll("button");
 const result = document.querySelector(".result");
 
+// paragraphs to display every round's result
 const para1 = document.createElement("p");
 const para2 = document.createElement("p");
 const para3 = document.createElement("p");
+
+// paragraphs to display final result
+const para4 = document.createElement("p");
+const para5 = document.createElement("p");
+const para6 = document.createElement("p");
+const para7 = document.createElement("p");
+
 
 buttons.forEach( (button) => {
 
@@ -56,20 +64,12 @@ function playRound(humanChoice, computerChoice){
 
 }
 
-const para4 = document.createElement("p");
-const para5 = document.createElement("p");
-const para6 = document.createElement("p");
-const para7 = document.createElement("p");
-
-
-
 function checkScore() {
 
     if(humanScore != 5 && computerScore != 5) return;
 
     para4.textContent = `------------------- FINAL RESULT -------------------`;
     result.appendChild(para4);
-
 
     para5.textContent = `Your score: ${humanScore}`;
     para6.textContent = `Computer score: ${computerScore}`;
@@ -86,6 +86,15 @@ function checkScore() {
     result.appendChild(para5);
     result.appendChild(para6);
     result.appendChild(para7);
+
+    disableButtons();
     
+}
+
+function disableButtons(){
+
+    buttons.forEach((button) => {
+        button.setAttribute("disabled", "true");
+    });
 
 }
