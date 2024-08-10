@@ -11,7 +11,7 @@ humanScore = 0;
 computerScore = 0;
 
 let humanChoice;
-let computerChoice = getComputerChoice();
+let computerChoice;
 
 const choices = document.querySelector(".choices");
 const buttons = choices.querySelectorAll("button");
@@ -33,6 +33,7 @@ buttons.forEach( (button) => {
 
     button.addEventListener("click", () => {
         humanChoice = button.textContent.toLowerCase();
+        computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
     });
 
